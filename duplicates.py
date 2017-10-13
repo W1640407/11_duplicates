@@ -5,9 +5,9 @@ from functools import total_ordering
 
 @total_ordering
 class File:
-    def __init__(self, path, name, size):
+    def __init__(self, path, filename, size):
         self.size = size
-        self.name = name
+        self.name = filename
         self.path = path
 
     def __str__(self) -> str:
@@ -17,16 +17,16 @@ class File:
     def __repr__(self) -> str:
         return self.__str__()
 
-    def __eq__(self, o: object) -> bool:
-        if not isinstance(o, File):
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, File):
             return False
-        return self.name == o.name and self.size == o.size
+        return self.name == other.name and self.size == other.size
 
     def __ne__(self, other) -> bool:
         return not self == other
 
     def __lt__(self, other) -> bool:
-        return self.name < other.name
+        return self.size < other.size
 
 
 def load_folder_content(foldername) -> list:

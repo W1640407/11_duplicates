@@ -10,7 +10,7 @@ python duplicates.py <filename>
 where  `<filename>` - file name
 
 #### Output:
-List of all duplicate files with relative path and size in kb
+List of all duplicate files with relative path and size in kb sorted in asc order
 
 #### Run script example:
 ```
