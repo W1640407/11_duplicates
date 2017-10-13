@@ -47,7 +47,7 @@ def remove_unique_files(files) -> list:
 if __name__ == '__main__':
     folder_content = load_folder_content(sys.argv[1])
     files = remove_unique_files(folder_content)
-    if len(files) == 0:
+    if not files:
         print("No duplicate files found")
     else:
         print("Following duplicates found:")
